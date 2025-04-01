@@ -1,0 +1,38 @@
+/* Styling for the Sidebar */
+.sidebar {
+    width: 250px; /* or whatever width your sidebar is */
+    position: fixed; /* Keeps the sidebar fixed on the left */
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: black; /* Sets the background color to black */
+    color: white; /* Sets the text color to white for contrast */
+    overflow-y: auto; /* Adds scroll if content exceeds the height of the sidebar */
+    /* Additional styling as needed */
+    margin-top: 80px;
+  }
+  
+  /* Styling for the Main content */
+  .main {
+    margin-left: 250px; /* Adjust this according to your sidebar width */
+    padding: 20px; /* or any padding you want */
+  }
+  
+  /* Styling for the Box Container */
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between boxes as needed */
+  }
+  
+  .sidebar a {
+    color: white; /* Makes sure links are white */
+    text-decoration: none; /* Removes underline from links */
+    display: block; /* Ensures links occupy full width of the list item */
+    padding: 10px; /* Adds padding for better clickability */
+  }
+  
+  /* Styling for links on hover */
+  .sidebar a:hover {
+    background-color: #333; /* Adds a hover effect with a slightly lighter shade */
+  }

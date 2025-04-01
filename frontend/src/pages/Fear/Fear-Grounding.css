@@ -1,0 +1,42 @@
+.exercise-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow boxes and text to wrap if needed */
+    height: 100vh;
+
+  }
+  
+  .exercise-box-container {
+    display: flex;
+    flex-direction: column; /* Stack box and text vertically */
+    align-items: center;
+    margin: 20px; /* Margin around each box-container */
+  }
+  
+  .exercise-box {
+    width: 900px; /* Width of the boxes */
+    height: 500px; /* Height of the boxes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px; /* Font size inside the boxes */
+    font-weight: bold;
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Ensure video fits within the box */
+  }
+  
+  .box-video {
+    width: 100%; /* Make the video fill the width of the box */
+    height: 100%; /* Make the video fill the height of the box */
+    object-fit: cover; /* Ensure the video covers the box area */
+  }
+  
+  .box-text {
+    margin-top: 10px; /* Space between the box and the text */
+    font-size: 16px; /* Font size of the text */
+    color: #000; /* Text color */
+    text-align: center; /* Center-align the text */
+  }
+  

@@ -1,0 +1,106 @@
+.emotions-app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.emotions-results {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+}
+
+.emotions-face-image {
+    margin-top: 20px;
+}
+
+.emotions-button {
+    margin: 10px;
+}
+
+.emotions-file-input {
+    margin: 10px;
+    width: 200px; /* Adjust this value to your preference */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.happy-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+.hello-button {
+    font-size: 1.2em; /* Increased font size */
+    padding: 10px 20px; /* Adjusted padding */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  }
+  
+  .hello-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
+  /* Media Queries */
+  @media (max-width: 600px) {
+    .hello-button {
+      font-size: 1em; /* Adjust font size for smaller screens */
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .hello-button {
+      font-size: 14px; /* Further adjust font size for very small screens */
+    }
+  }

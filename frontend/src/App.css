@@ -1,0 +1,45 @@
+/* body {
+
+   
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #6AF5E5, #BA90E3, #E2CCE0); //Add gradient background with three colors 
+  min-height: 100vh; // Ensure gradient covers the full height of the viewport 
+} */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('/src/assets/images/pic.gif'); /* Add GIF background */
+  background-size: cover; /* Ensure the GIF covers the entire background */
+  background-position: center center; /* Position the GIF at the center */
+  min-height: 100vh; /* Ensure gradient covers the full height of the viewport */
+}
+
+
+.logged-in {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background: linear-gradient(to bottom, #46EBB0, #742C6E);*/ /* Add gradient background with three colors */
+  
+  background: url('/src/assets/images/1.gif') no-repeat;
+  background-size: cover;
+  
+
+  min-height: 100vh; /* Ensure gradient covers the full height of the viewport */
+
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+  text-align: center;
+  color: white; /* Ensure text is readable against the gradient background */
+}

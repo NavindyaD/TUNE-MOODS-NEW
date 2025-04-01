@@ -1,0 +1,139 @@
+/* General styles */
+.hangs-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Centering wrapper for the game */
+.hangman-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/hangmanBackground.jpeg');
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Hangman figure styling */
+.hangman-figure {
+  margin: 20px auto;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  font-size: 1.2em;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Word to Guess styling */
+.word-display {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 2px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.letters button {
+  background-color: #5ece62; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding */
+  margin: 5px; /* Spacing between buttons */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.letters button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.letters button:disabled {
+  background-color: #ccc; /* Gray background for disabled buttons */
+  cursor: not-allowed; /* Not-allowed cursor */
+}
+
+
+/* New Game button styling */
+.new-game-button {
+  font-size: 1.2em;
+  margin: 20px auto;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.new-game-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.new-game-button:focus {
+  outline: none;
+}
+
+/* Game status messages */
+.game-status-container {
+  margin-top: 20px;
+}
+
+.win-message {
+  font-size: 1.5em;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.game-over-message {
+  font-size: 1.5em;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .word-display {
+    font-size: 1.5em;
+  }
+
+  .letters-container button {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+
+  .new-game-button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}

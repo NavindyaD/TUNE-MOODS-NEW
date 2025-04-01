@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  text-align: center;  /* Center text in the container */
+  padding: 20px;
+  gap: 20px;           /* Space between elements */
+}
+
+.home h1 {
+  text-align: left;    /* Align h1 text to the left */
+  width: 100%;         /* Make sure h1 takes full width of its container */
+  color: black; 
+  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+}
+
+.home p {
+  text-align: center; /* Justify the paragraph text */
+  width: 100%;         /* Make sure p takes full width of its container */
+  font-size: 20px;  
+  color: black; 
+  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+  line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+}
+
+/**Get started button**/
+.home button {
+  display: inline-block;
+  padding: 15px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #17845c;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.home button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

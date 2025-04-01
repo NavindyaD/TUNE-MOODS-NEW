@@ -1,0 +1,58 @@
+.BrowseSongs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.BrowseSongs-input {
+  margin-right: 10px;
+  width: 400px; /* Adjust the width here */
+  padding: 10px; /* Padding for better appearance */
+  border: 2px solid #17845c; /* Border color matching the button */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 16px; /* Font size for readability */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+.BrowseSongs-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #3e8e41; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5); /* Soft glow effect */
+}
+
+.BrowseSongs-button {
+  font-size: 1.2em; /* Increased font size */
+  padding: 10px 20px; /* Adjusted padding */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.BrowseSongs-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.BrowseSongs-videoList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.BrowseSongs-videoItem {
+  cursor: pointer;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.BrowseSongs-videoPlayer {
+  margin-top: 20px;
+}

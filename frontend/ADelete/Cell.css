@@ -1,0 +1,24 @@
+/* src/Cell.css */
+
+.cell {
+    width: 50px;         /* Width of each cell */
+    height: 50px;        /* Height of each cell */
+    border: 1px solid #ddd; /* Light border for cells */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    cursor: pointer;     /* Pointer cursor to indicate clickable cells */
+    display: flex;       /* Flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    transition: background-color 0.3s; /* Smooth transition for background color changes */
+  }
+  
+  .cell:hover {
+    opacity: 0.8; /* Slightly change opacity on hover for visual feedback */
+  }
+  
+  /* Optional: Add some styling for the content of the cell */
+  .cell::before {
+    content: '';       /* If you want to add icons or images later, use this */
+    display: block;   /* Ensures that the content takes up space */
+  }
+  

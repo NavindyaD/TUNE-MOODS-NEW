@@ -1,0 +1,119 @@
+/* src/Signup.css */
+
+.signup-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .image-section {
+    flex: 1;
+    background-color: #6AF5E5; /* Light blue background for the image section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .form-section {
+    width: 40%; /* Set width to 40% of the viewport width */
+    height: 100%; /* Full height of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the left */
+    background-color: #BA90E3; /* Light purple background for the form section */
+    border-radius: 0; /* Remove rounded corners */
+    padding: 2rem; /* Add padding inside the section */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    margin: 0; /* Remove outer margins */
+  }
+  
+  .form-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #000; /* Black color for the heading */
+    text-align: left; /* Align heading text to the left */
+  }
+  
+  .login-link {
+    margin: 0;
+    text-align: left; /* Align login link to the left */
+  }
+  
+  .login-link a {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 2rem; /* Increase the gap between First Name and Last Name fields */
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold; /* Make labels bold */
+    color: #000; /* Black color for labels */
+    text-align: left; /* Align label text to the left */
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  .signup-button {
+    display: inline-block;
+    padding: 15px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-top: 1rem; /* Add some space above the button */
+  }
+  
+  .signup-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .signup-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  

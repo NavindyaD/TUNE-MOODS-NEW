@@ -1,0 +1,19 @@
+body {
+
+   
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #6AF5E5, #BA90E3, #E2CCE0); /* Add gradient background with three colors */
+  min-height: 100vh; /* Ensure gradient covers the full height of the viewport */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+  text-align: center;
+  color: white; /* Ensure text is readable against the gradient background */
+}

@@ -1,0 +1,37 @@
+/* src/Quiz.css */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: block; /* Ensure each list item takes full width for easier spacing */
+    margin: 15px 0; /* Increased margin to add more space between answers */
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .question-text {
+    color: red;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .answer-text {
+    color: green;
+  }
+  

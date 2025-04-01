@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 100px; /* Increase space between each image */
+}
+
+.image {
+    width: 200px; /* Set the width of the images */
+    height: 200px; /* Set the height of the images */
+    object-fit: cover; /* Ensure images cover the box area */
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+.text-container {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center; /* Center-align the text */
+}
+
+.bold-text {
+    font-size: 25px; /* Font size for the bold text */
+    font-weight: bold; /* Make text bold */
+    color: #000; /* Text color */
+    font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+    line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+}
+
+.normal-text {
+    font-size: 20px; /* Font size for the normal text */
+    font-weight: normal; /* Regular font weight */
+    color: #333; /* Slightly lighter text color */
+    font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+    line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+}

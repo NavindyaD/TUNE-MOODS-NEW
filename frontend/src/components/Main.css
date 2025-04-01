@@ -1,0 +1,18 @@
+.main {
+    padding: 20px;
+  }
+  
+  .main section {
+    margin: 20px 0;
+  }
+  
+  .main h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .main p {
+    font-size: 16px;
+    color: #666;
+  }
+  

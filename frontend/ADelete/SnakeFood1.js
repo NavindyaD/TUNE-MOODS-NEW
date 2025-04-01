@@ -1,0 +1,18 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const FoodItem = styled.div`
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #d9534f;
+  border: 2px solid #c9302c;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 50%; /* Make food item circular */
+`;
+
+const Food = ({ food }) => {
+  return <FoodItem style={{ left: `${food.x * 20}px`, top: `${food.y * 20}px` }} />;
+};
+
+export default Food;

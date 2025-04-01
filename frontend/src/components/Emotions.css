@@ -1,0 +1,38 @@
+.App {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    margin: 10px;
+}
+
+.playlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.playlist-item {
+    margin: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
