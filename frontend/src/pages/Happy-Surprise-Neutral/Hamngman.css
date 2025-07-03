@@ -1,13 +1,12 @@
-/* General styles */
 .hangs-container {
   font-family: Arial, sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
 /* Centering wrapper for the game */
@@ -48,11 +47,6 @@
   text-transform: uppercase;
 }
 
-
-
-
-
-
 .letters {
   display: flex;
   flex-wrap: wrap;
@@ -61,26 +55,25 @@
 }
 
 .letters button {
-  background-color: #5ece62; /* Green background */
-  color: white; /* White text */
-  border: none; /* Remove borders */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 15px; /* Padding */
-  margin: 5px; /* Spacing between buttons */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth background change */
+  background-color: #5ece62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px; 
+  font-size: 16px; 
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .letters button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
 
 .letters button:disabled {
-  background-color: #ccc; /* Gray background for disabled buttons */
-  cursor: not-allowed; /* Not-allowed cursor */
+  background-color: #ccc;
+  cursor: not-allowed;
 }
-
 
 /* New Game button styling */
 .new-game-button {

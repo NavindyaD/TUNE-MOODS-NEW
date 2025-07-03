@@ -1,4 +1,3 @@
-// src/components/login2.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -33,9 +32,9 @@ function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        login(data.user); // Store user data in context and localStorage
+        login(data.user); 
         alert(`Login successful. Welcome, ${data.user.firstName} ${data.user.lastName}!`);
-        navigate('/emotions1'); // Redirect to home page
+        navigate('/emotions1');
       } else {
         alert('Login failed. Please check your email and password.');
       }

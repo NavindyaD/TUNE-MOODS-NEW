@@ -1,7 +1,6 @@
 import React from 'react';
-import './Services.css'; // Import the CSS file
+import './Services.css';
 
-// Import local images
 import image1 from '../assets/images/Music_Playlist.jpg';
 import image2 from '../assets/images/Engagement_Activities.jpg';
 import image3 from '../assets/images/Inspirational Quotes.jpg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Fear-Grounding.css'; // Import the CSS file for styling
+import './Fear-Grounding.css';
 import GroundingExercise from '../../assets/images/A Grounding Exercise.mp4';
 
 

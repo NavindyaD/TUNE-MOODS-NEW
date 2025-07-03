@@ -21,22 +21,8 @@
 
 .emotions-file-input {
     margin: 10px;
-    width: 200px; /* Adjust this value to your preference */
+    width: 200px; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .happy-modal {
     position: fixed;
@@ -71,36 +57,31 @@
     background-color: #45a049;
 }
 
-
-
-
-
 .hello-button {
-    font-size: 1.2em; /* Increased font size */
-    padding: 10px 20px; /* Adjusted padding */
+    font-size: 1.2em;
+    padding: 10px 20px;
     cursor: pointer;
     border: none;
-    border-radius: 5px; /* Rounded corners */
-    background-color: #28a745; /* Green background */
-    color: white; /* White text */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    border-radius: 5px; 
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
   }
   
   .hello-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
+    background-color: #218838; 
+    transform: scale(1.05);
   }
   
-  /* Media Queries */
   @media (max-width: 600px) {
     .hello-button {
-      font-size: 1em; /* Adjust font size for smaller screens */
-      padding: 8px 16px; /* Adjust padding for smaller screens */
+      font-size: 1em;
+      padding: 8px 16px; 
     }
   }
   
   @media (max-width: 400px) {
     .hello-button {
-      font-size: 14px; /* Further adjust font size for very small screens */
+      font-size: 14px;
     }
   }

@@ -8,7 +8,7 @@ function Emotions() {
     const [quotes, setQuotes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [faceImage, setFaceImage] = useState(null);
-    const [webcamActive, setWebcamActive] = useState(false); // Start with camera off
+    const [webcamActive, setWebcamActive] = useState(false);
     const webcamRef = useRef(null);
 
     const videoConstraints = {

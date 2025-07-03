@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from './AuthContext'; // Assuming you have this context for user authentication
+import { useAuth } from './AuthContext'; 
 import axios from 'axios';
 import './Favorite.css';
 
 function Favorite() {
-    const { user, isLoggedIn } = useAuth(); // Get user data from context
+    const { user, isLoggedIn } = useAuth();
     const [favorites, setFavorites] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -18,7 +18,7 @@ function Favorite() {
     const fetchFavorites = async (userId) => {
         try {
             const response = await axios.get(`http://127.0.0.1:5000/get_favorites/${userId}`);
-            setFavorites(response.data.favorites); // Set the favorites data from the backend
+            setFavorites(response.data.favorites); 
             setLoading(false);
         } catch (error) {
             console.error('Error fetching favorites:', error);
@@ -39,6 +39,18 @@ function Favorite() {
     const handleVideoChange = (index) => {
         if (index >= 0 && index < favorites.length) {
             setCurrentVideoIndex(index);
+        }
+    };
+    const removeFavorite = async (videoUrl) => {
+        try {
+            await axios.post('http://127.0.0.1:5000/remove_favorite', {
+                user_id: user.id,
+                video_url: videoUrl
+            });
+            // After successfully removing the song, update the favorites list
+            setFavorites(favorites.filter((song) => song !== videoUrl));
+        } catch (error) {
+            console.error('Error removing from favorites:', error);
         }
     };
 
@@ -87,10 +99,19 @@ function Favorite() {
                                         >
                                             <img src={thumbnailUrl} alt="Song Thumbnail" className="song-thumbnail" />
                                             <div className="song-details">
-                                                <h3>Song {index + 1}</h3> {/* Customize to show actual title if available */}
+                                                <h3>Song {index + 1}</h3> 
                                                 <a href={videoUrl} target="_blank" rel="noopener noreferrer">
                                                     Watch on YouTube
                                                 </a>
+                                                <button
+                                                    className="remove-button"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        removeFavorite(songUrl);
+                                                    }}
+                                                >
+                                                    Remove from Favorites
+                                                </button>
                                             </div>
                                         </li>
                                     );

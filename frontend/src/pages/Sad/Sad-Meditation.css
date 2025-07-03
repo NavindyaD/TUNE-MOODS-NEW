@@ -17,8 +17,8 @@
   }
   
   .meditation-video {
-    width: 900px; /* Width of the boxes */
-    height: 500px; /* Height of the boxes */
+    width: 900px;
+    height: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }

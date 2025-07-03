@@ -1,6 +1,5 @@
 import React from 'react';
-import './Angry-Breathing.css'; // Import the CSS file for styling
-//import GroundingExercise from '../../assets/images/A Grounding Exercise.mp4';
+import './Angry-Breathing.css';
 import BreathingExercise from '../../assets/images/Calm Breathing Exercise.mp4';
 
 function App() {

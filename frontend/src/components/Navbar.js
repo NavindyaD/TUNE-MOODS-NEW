@@ -1,18 +1,17 @@
-// src/Navbar.js
 import React from 'react';
 import './Navbar.css';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 import homeIcon from '../assets/images/Logo.png';
 import userIcon from '../assets/images/Logo.png';
 import { useAuth } from './AuthContext';
 
 const Navbar = () => {
   const { isLoggedIn, user, logout } = useAuth();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout(); // Clear auth state and log the user out
-    navigate('/home'); // Redirect to the About Us page
+    logout();
+    navigate('/home');
   };
 
   return (

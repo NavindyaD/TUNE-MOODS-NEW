@@ -2,12 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Webcam from 'react-webcam';
 import YouTube from 'react-youtube';
-import { useAuth } from './AuthContext'; // Assuming you have this context for user authentication
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useAuth } from './AuthContext'; 
+import { useNavigate } from 'react-router-dom'; 
 import './Emotions4.css';
 
 function Emotions() {
-    const { user, isLoggedIn } = useAuth(); // Access user data from context
+    const { user, isLoggedIn } = useAuth(); 
     const [emotion, setEmotion] = useState(null);
     const [playlist, setPlaylist] = useState([]);
     const [quotes, setQuotes] = useState([]);
@@ -17,7 +17,7 @@ function Emotions() {
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [playing, setPlaying] = useState(false);
     const webcamRef = useRef(null);
-    const navigate = useNavigate(); // Initialize navigate function
+    const navigate = useNavigate(); 
 
     const videoConstraints = {
         width: 480,
@@ -53,7 +53,7 @@ function Emotions() {
         setLoading(true);
         try {
             const response = await axios.post('http://127.0.0.1:5000/predict_emotion', { image: base64Image }, { timeout: 60000 });
-            console.log('API Response:', response.data); // Log the API response
+            console.log('API Response:', response.data);
             setEmotion(response.data.emotion);
             setPlaylist(response.data.songs || []);
             setQuotes(response.data.quotes || []);
@@ -116,11 +116,11 @@ function Emotions() {
             return;
         }
 
-        if (playlist.length > 0 && user.id) {  // Check if user is logged in and playlist has songs
+        if (playlist.length > 0 && user.id) {  
             const currentVideoUrl = playlist[currentSongIndex];
             try {
                 await axios.post('http://127.0.0.1:5000/favorite', {
-                    user_id: user.id, // Use user ID from context
+                    user_id: user.id, 
                     video_url: currentVideoUrl
                 });
                 alert('Song added to favorites!');
@@ -135,7 +135,7 @@ function Emotions() {
 
     return (
         <div className="emotions-app-container">
-            <h1>Emotion-Driven Music Playlist and Quotes Generator</h1>
+            <h1>Emotion-Driven Music Playlist Generator with Engagement Activities</h1>
 
             {/* User image upload to predict mood */}
             <input
@@ -181,148 +181,104 @@ function Emotions() {
                 </button>
             )}
 
-            {/* Display buttons if emotion is angry */}
-            {/* {emotion && emotion.toLowerCase() === "angry" && (
-                <button className="hello-button" onClick={() => navigate('/breathing-exercise')}>
-                    Do Breathing Exercises
-                </button>
+            {emotion && emotion.toLowerCase() === "angry" && (
+                <a href="/breathing-exercise" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Do Breathing Exercises
+                    </button>
+                </a>
             )}
 
             {emotion && emotion.toLowerCase() === "angry" && (
-                <button className="hello-button" onClick={() => navigate('/color-matching-game')}>
-                    Play a matching game
-                </button>
+                <a href="/color-matching-game" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Play a matching game
+                    </button>
+                </a>
             )}
 
             {emotion && emotion.toLowerCase() === "fear" && (
-                <button className="hello-button" onClick={() => navigate('/grounding-exercise')}>
-                    Do Grounding Exercises
-                </button>
+                <a href="/grounding-exercise" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Do Grounding Exercises
+                    </button>
+                </a>
+            )}
+
+            {emotion && emotion.toLowerCase() === "disgust" && (
+                <a href="/funnyvideos" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Watch funny Videos
+                    </button>
+                </a>
             )}
 
             {emotion && emotion.toLowerCase() === "sad" && (
-                <button className="hello-button" onClick={() => navigate('/meditation')}>
-                    Do Meditation
-                </button>
+                <a href="/meditation" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Do Meditation
+                    </button>
+                </a>
             )}
 
             {(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-                <button className="hello-button" onClick={() => navigate('/snake')}>
-                    Play Snake Game
-                </button>
+                <a href="/snake" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Play Snake Game
+                    </button>
+                </a>
             )}
 
             {(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-                <button className="hello-button" onClick={() => navigate('/quiz')}>
-                    What to play Quiz game
-                </button>
+                <a href="/quiz" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        What to play Quiz game
+                    </button>
+                </a>
             )}
 
             {(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-                <button className="hello-button" onClick={() => navigate('/hangman')}>
-                    Let's Play Hangman Game
-                </button>
+                <a href="/hangman" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Let's Play Hangman Game
+                    </button>
+                </a>
             )}
 
             {(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-                <button className="hello-button" onClick={() => navigate('/health-tips')}>
-                    Watch Health-tips
-                </button>
-            )} */}
-
-{emotion && emotion.toLowerCase() === "angry" && (
-    <a href="/breathing-exercise" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Do Breathing Exercises
-        </button>
-    </a>
-)}
-
-{emotion && emotion.toLowerCase() === "angry" && (
-    <a href="/color-matching-game" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Play a matching game
-        </button>
-    </a>
-)}
-
-{emotion && emotion.toLowerCase() === "fear" && (
-    <a href="/grounding-exercise" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Do Grounding Exercises
-        </button>
-    </a>
-)}
-
-{emotion && emotion.toLowerCase() === "sad" && (
-    <a href="/meditation" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Do Meditation
-        </button>
-    </a>
-)}
-
-{(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-    <a href="/snake" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Play Snake Game
-        </button>
-    </a>
-)}
-
-{(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-    <a href="/quiz" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            What to play Quiz game
-        </button>
-    </a>
-)}
-
-{(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-    <a href="/hangman" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Let's Play Hangman Game
-        </button>
-    </a>
-)}
-
-{(emotion && (emotion.toLowerCase() === "happy" || emotion.toLowerCase() === "surprise" || emotion.toLowerCase() === "neutral")) && (
-    <a href="/health-tips" target="_blank" rel="noopener noreferrer">
-        <button className="hello-button">
-            Watch Health-tips
-        </button>
-    </a>
-)}
+                <a href="/health-tips" target="_blank" rel="noopener noreferrer">
+                    <button className="hello-button">
+                        Watch Health-tips
+                    </button>
+                </a>
+            )}
 
 
             {/* Display Emotion, Quotes, Playlist */}
             {emotion && (
                 <div className="emotions-results">
-                    <h2>Detected Emotion: {emotion}</h2>
-
-                    {/* Quotes section */}
-                    <h3>Quotes:</h3>
-                    <ul>
-                        {quotes.map((quote, index) => (
-                            <li key={index}>{quote}</li>
-                        ))}
-                    </ul>
-
-                    <h3>Playlist:</h3>
-                    {playing && playlist.length > 0 && (
-                        <>
-                            <YouTube
-                                videoId={extractYouTubeID(playlist[currentSongIndex])}
-                                opts={{ height: '315', width: '560' }}
-                                onEnd={handleEnd}
-                                onReady={handleReady}
-                            />
-                            <button onClick={saveFavorite} className="emotions-button">
-                                Add to Favorites
-                            </button>
-                        </>
-                    )}
-                </div>
+                <h2>Detected Emotion: {emotion}</h2>
+            
+                {/* Display a random quote */}
+                <h3>Quote:</h3>
+                {quotes.length > 0 && <p>{quotes[Math.floor(Math.random() * quotes.length)]}</p>} {/* Display random quote */}
+            
+                <h3>Playlist:</h3>
+                {playing && playlist.length > 0 && (
+                    <>
+                        <YouTube
+                            videoId={extractYouTubeID(playlist[currentSongIndex])}
+                            opts={{ height: '315', width: '560' }}
+                            onEnd={handleEnd}
+                            onReady={handleReady}
+                        />
+                        <button onClick={saveFavorite} className="emotions-button">
+                            Add to Favorites
+                        </button>
+                    </>
+                )}
+            </div>
+            
             )}
 
             {/* Display Detected Face */}

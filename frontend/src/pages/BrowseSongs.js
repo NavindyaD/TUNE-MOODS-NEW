@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BrowseSongs.css';
-const API_KEY = 'AIzaSyCgKGEIsfmf31P5go8cpD2fU5vdr8-EENg'; // Replace with your YouTube API key
+const API_KEY = 'AIzaSyCgKGEIsfmf31P5go8cpD2fU5vdr8-EENg';
 
 const App = () => {
   const [query, setQuery] = useState('');

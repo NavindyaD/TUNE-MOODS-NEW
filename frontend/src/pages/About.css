@@ -5,36 +5,36 @@
 }
 
 .black-box {
-  width: 97%; /* Width of the box */
-  height: auto; /* Adjust height to content */
-  background-color: rgba(0, 0, 0, 0.56); /* Black color with 76% opacity */
-  margin: 0px 0px; /* Space above and below the box */
-  padding: 20px; /* Padding inside the box */
-  color: white; /* Default text color inside the box */
-  text-align: center; /* Align text to the left */
+  width: 97%; 
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.56);
+  margin: 0px 0px; 
+  padding: 20px; 
+  color: white; 
+  text-align: center; 
   padding-bottom: 10px;
 }
 
 .section-title {
-  color: #6AF5E5; /* Green color for section titles */
-  font-size: 20px; /* Font size for section titles */
-  margin-top: 0; /* Remove default margin-top for consistency */
-  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
-  font-weight: bold; /* Bold text */
-  line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+  color: #6AF5E5; 
+  font-size: 20px;
+  margin-top: 0; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  line-height: 1.9;  
 }
 
 .description {
-  font-size: 20px; /* Font size for description text */
-  margin: 10px 0; /* Space above and below paragraphs */
-  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
-  line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+  font-size: 20px;
+  margin: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.9; 
 }
 
 .thank-you {
-  font-weight: bold; /* Bold text */
-  color: white; /* White color for thank you text */
-  font-size: 20px; /* Font size for thank you text */
-  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
-  line-height: 1.9;    /* Adjust line spacing (1.6 is an example, you can modify it as needed) */
+  font-weight: bold; 
+  color: white; 
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif; 
+  line-height: 1.9;
 }

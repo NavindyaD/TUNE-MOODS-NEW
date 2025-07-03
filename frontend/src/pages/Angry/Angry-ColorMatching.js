@@ -6,7 +6,7 @@ import orangeCandy from '../../assets/images/orange.png';
 import purpleCandy from '../../assets/images/purple.png';
 import redCandy from '../../assets/images/red.png';
 import yellowCandy from '../../assets/images/yellow.png';
-import blank from '../../assets/images/all.png'; // A blank or default image
+import blank from '../../assets/images/all.png';
 
 const width = 8;
 const candyImages = [blueCandy, greenCandy, orangeCandy, purpleCandy, redCandy, yellowCandy];
@@ -33,7 +33,7 @@ const App = () => {
   
       if (rowOfThree.every(square => currentCandyArrangement[square] === decidedCandy && !isBlank)) {
         rowOfThree.forEach(square => {
-          currentCandyArrangement[square] = candyImages[Math.floor(Math.random() * candyImages.length)]; // Replace with new candy
+          currentCandyArrangement[square] = candyImages[Math.floor(Math.random() * candyImages.length)];
         });
         return true;
       }
@@ -120,7 +120,7 @@ const App = () => {
         {currentCandyArrangement.map((candyImage, index) => (
           <img
             key={index}
-            src={candyImage || blank} // Fallback to the blank image if candyImage is missing
+            src={candyImage || blank}
             alt="candy"
             data-id={index}
             draggable={true}

@@ -11,7 +11,7 @@ const SignIn = () => {
         try {
             const response = await axios.post('http://localhost:5000/signin', { username, password });
             setMessage(response.data.message || response.data.error || 'Unknown error occurred');
-            // Handle successful sign-in (e.g., store tokens, redirect)
+            // Handle successful sign-in 
         } catch (error) {
             if (error.response) {
                 setMessage(error.response.data.error || 'An error occurred. Please try again.');

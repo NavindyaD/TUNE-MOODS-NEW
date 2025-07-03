@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import Hangman from './Hangman';
 import WordToGuess from './Hangman-WordToGuess';
 import Letters from './Hangman-Letters';
-import './Hamngman.css'; // Ensure this path is correct
+import './Hamngman.css';
 
-const MAX_WRONG_GUESSES = 7; // Maximum wrong guesses allowed
+const MAX_WRONG_GUESSES = 7; 
 
 const App = () => {
   const words = ['hangman', 'apple', 'banana', 'computer', 'elephant', 'javascript'];
   const [wordToGuess, setWordToGuess] = useState(selectRandomWord(words));
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
+  const [clue, setClue] = useState(getClue(wordToGuess));
 
   function selectRandomWord(words) {
     return words[Math.floor(Math.random() * words.length)];
+  }
+
+  // Function to get a clue (here we use the first letter)
+  function getClue(word) {
+    return `Clue: The word starts with '${word.charAt(0).toUpperCase()}'`;
   }
 
   const handleLetterClick = (letter) => {
@@ -30,6 +36,7 @@ const App = () => {
   const handleNewGame = () => {
     const newWord = selectRandomWord(words);
     setWordToGuess(newWord);
+    setClue(getClue(newWord));
     setGuessedLetters([]);
     setWrongGuesses(0);
   };
@@ -41,19 +48,26 @@ const App = () => {
 
   return (
     <div className="hangs-container">
-    <div className="hangman-wrapper">
-      <h1>Hangman Game</h1>
-      <Hangman className="hangman-figure" wrongGuesses={wrongGuesses} />
-      <WordToGuess className="word-display" word={wordToGuess} guessedLetters={guessedLetters} />
-      <Letters className="letters-container" guessedLetters={guessedLetters} handleLetterClick={handleLetterClick} />
-      <button className="new-game-button" onClick={handleNewGame}>New Game</button>
-      <div className="game-status-container">
-        {isWinMessage && <p className="win-message">{isWinMessage}</p>}
-        {isGameOverMessage && <p className="game-over-message">{isGameOverMessage}</p>}
+      <div className="hangman-wrapper">
+        <h1>Hangman Game</h1>
+        <Hangman className="hangman-figure" wrongGuesses={wrongGuesses} />
+        <WordToGuess className="word-display" word={wordToGuess} guessedLetters={guessedLetters} />
+        <Letters className="letters-container" guessedLetters={guessedLetters} handleLetterClick={handleLetterClick} />
+        <button className="new-game-button" onClick={handleNewGame}>New Game</button>
+        
+        {/* Displaying the clue */}
+        <div className="clue-container">
+          <p>{clue}</p>
+        </div>
+
+        <div className="game-status-container">
+          {isWinMessage && <p className="win-message">{isWinMessage}</p>}
+          {isGameOverMessage && <p className="game-over-message">{isGameOverMessage}</p>}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
 
 export default App;
+

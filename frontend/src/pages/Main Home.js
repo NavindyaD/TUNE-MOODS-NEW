@@ -1,5 +1,4 @@
 import React from "react";
-//import BannerImage from "../Assets/home-banner-image.png";
 import { useNavigate } from "react-router-dom";
 import '../style.css'
 import Navbar from "./Navbar";
@@ -30,7 +29,6 @@ const Home = () => {
           </button>
         </div>
         <div className="home-image-section">
-          {/* <img className="card" src={BannerImage} alt="" /> */}
         </div>
       </div>
     </div>

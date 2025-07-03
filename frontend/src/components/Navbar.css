@@ -16,24 +16,9 @@
    
   } 
 
-
-
-
-
-/* .navbar {
-    background-color: #000;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-   
-  } */
-
-  
   .left-icon img {
-    width: 54px; /* Adjust size as needed */
-    height: 54px; /* Adjust size as needed */
+    width: 54px;
+    height: 54px;
   }
   
   
@@ -43,19 +28,19 @@
     padding: 0;
     display: flex;
     flex: 1;
-    justify-content: center; /* Center the links */
+    justify-content: center;
   }
   
   .nav-item {
-    padding: 14px 70px; /* Increase padding to add more space */
+    padding: 14px 70px;
   }
   
   .nav-item a {
     color: white;
     text-decoration: none;
     font-size: 20px;
-    font-family: 'Roboto', sans-serif; /* Set font to Roboto */
-    font-weight: bold; /* Make letters bold */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
   }
   
   .nav-item a:hover {
@@ -67,20 +52,15 @@
     color: white;
     font-size: 20px;
     cursor: pointer;
-    margin-left: auto; /* Push the icon to the far right */
+    margin-left: auto;
   }
   
-
-
-  /**Login button**/
-  /* Navbar.css */
-
 .login-button {
-  background-color: #000; /* Black background fill */
-  border: 2px solid #fff; /* White border */
-  color: #fff; /* White text */
-  font-family: 'Roboto', sans-serif; /* Set font to Roboto */
-  font-weight: bold; /* Make letters bold */
+  background-color: #000;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
   border-radius: 4px;
@@ -91,6 +71,6 @@
 }
 
 .login-button:hover {
-  background-color: #333; /* Darker black on hover */
-  border-color: #fff; /* Keep the white border on hover */
+  background-color: #333;
+  border-color: #fff;
 }
