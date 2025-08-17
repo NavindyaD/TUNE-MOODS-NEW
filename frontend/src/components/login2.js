@@ -32,9 +32,13 @@ function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        login(data.user); 
+        // Pass both user data and token to login function
+        login(data.user, data.token); 
         alert(`Login successful. Welcome, ${data.user.firstName} ${data.user.lastName}!`);
-        navigate('/emotions1');
+        // Get the intended path from localStorage or default to emotions1
+        const intendedPath = localStorage.getItem('intendedPath') || '/emotions1';
+        localStorage.removeItem('intendedPath'); // Clear it after use
+        navigate(intendedPath);
       } else {
         alert('Login failed. Please check your email and password.');
       }

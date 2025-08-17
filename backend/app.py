@@ -27,7 +27,7 @@ model = load_model('best_model_over_70.h5')
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
 data = pd.read_csv('data_moods.csv')
 quotes_data = pd.read_csv('quotes.csv')
-api_key = 'AIzaSyBoaTNljQ-TQv9ZkduE0yDryjD3w18_kZw'  # Use your own API key
+api_key = 'AIzaSyBoaTNljQ-TQv9ZkduE0yDryjD3w18_kZw'
 mood_column = 'mood'
 
 # Utility

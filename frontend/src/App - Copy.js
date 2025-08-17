@@ -50,6 +50,7 @@ function App() {
                 <Route path="/browse" element={<Browse />} />
                 <Route path="/play-games" element={<MainPlayGames />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/emotions1" element={<Emotions />} />
                 <Route path="/favourite" element={<Favourite />} />
                 <Route path="/quotes" element={<Quotes />} />
                 <Route path="/grounding-exercise" element={<Grounding />} />
@@ -58,14 +59,6 @@ function App() {
                 <Route path="/funnyvideos" element={<FunnyVideos />} />
 
                 {/* Protected routes*/}
-                <Route
-                    path="/emotions1"
-                    element={
-                        <ProtectedRoute>
-                           <Emotions />
-                        </ProtectedRoute>
-                    }
-                />
                 <Route
                     path="/dashboard"
                     element={

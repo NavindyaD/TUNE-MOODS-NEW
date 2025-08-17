@@ -18,10 +18,7 @@ function Favorite() {
     const fetchFavorites = async (userId) => {
         try {
             const response = await axios.get(`http://127.0.0.1:5000/get_favorites/${userId}`);
-            const cleanedFavorites = response.data.favorites.filter(
-                url => typeof url === 'string' && url.includes('v=')
-            ).map(normalizeVideoUrl); // Normalize URLs on load
-            setFavorites(cleanedFavorites);
+            setFavorites(response.data.favorites); 
             setLoading(false);
         } catch (error) {
             console.error('Error fetching favorites:', error);
@@ -29,29 +26,14 @@ function Favorite() {
         }
     };
 
-    const normalizeVideoUrl = (url) => {
-        try {
-            const videoId = new URL(url).searchParams.get('v');
-            return `https://www.youtube.com/watch?v=${videoId}`;
-        } catch {
-            return url;
-        }
-    };
-
     const getVideoDetails = (url) => {
-        if (!url || typeof url !== 'string') return null;
-        try {
-            const videoId = new URL(url).searchParams.get('v');
-            if (!videoId) throw new Error('No video ID found');
-            return {
-                videoId,
-                thumbnailUrl: `https://img.youtube.com/vi/${videoId}/0.jpg`,
-                videoUrl: `https://www.youtube.com/watch?v=${videoId}`
-            };
-        } catch (e) {
-            console.warn('Failed to parse video URL:', url, e.message);
-            return null;
-        }
+        // Extract video ID from YouTube URL
+        const videoId = url.split('v=')[1];
+        return {
+            videoId,
+            thumbnailUrl: `https://img.youtube.com/vi/${videoId}/0.jpg`,
+            videoUrl: `https://www.youtube.com/watch?v=${videoId}`
+        };
     };
 
     const handleVideoChange = (index) => {
@@ -59,38 +41,18 @@ function Favorite() {
             setCurrentVideoIndex(index);
         }
     };
-
     const removeFavorite = async (videoUrl) => {
         try {
             await axios.post('http://127.0.0.1:5000/remove_favorite', {
                 user_id: user.id,
                 video_url: videoUrl
             });
+            // After successfully removing the song, update the favorites list
             setFavorites(favorites.filter((song) => song !== videoUrl));
         } catch (error) {
             console.error('Error removing from favorites:', error);
         }
     };
-
-    const addToFavorites = async (videoUrl) => {
-        const normalizedUrl = normalizeVideoUrl(videoUrl);
-        if (favorites.includes(normalizedUrl)) {
-            alert('This song is already in your favorites!');
-            return;
-        }
-
-        try {
-            await axios.post('http://127.0.0.1:5000/add_favorite', {
-                user_id: user.id,
-                video_url: normalizedUrl
-            });
-            setFavorites([...favorites, normalizedUrl]);
-        } catch (error) {
-            console.error('Error adding to favorites:', error);
-        }
-    };
-
-    const currentVideo = getVideoDetails(favorites[currentVideoIndex]);
 
     return (
         <div className="favorites-page">
@@ -100,11 +62,11 @@ function Favorite() {
             ) : (
                 <div className="playlist-container">
                     <div className="video-player">
-                        {favorites.length > 0 && currentVideo && (
+                        {favorites.length > 0 && (
                             <iframe
                                 width="100%"
                                 height="400"
-                                src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
+                                src={`https://www.youtube.com/embed/${getVideoDetails(favorites[currentVideoIndex]).videoId}`}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
@@ -128,10 +90,7 @@ function Favorite() {
                         ) : (
                             <ul className="playlist-list">
                                 {favorites.map((songUrl, index) => {
-                                    const videoDetails = getVideoDetails(songUrl);
-                                    if (!videoDetails) return null;
-
-                                    const { thumbnailUrl, videoUrl } = videoDetails;
+                                    const { thumbnailUrl, videoUrl } = getVideoDetails(songUrl);
                                     return (
                                         <li
                                             key={index}
